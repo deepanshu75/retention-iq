@@ -6,4 +6,3 @@ __pycache__/
 .idea/
 *.csv
 !data/subscription_data.csv
-!data/.gitkeep

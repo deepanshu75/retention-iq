@@ -19,8 +19,8 @@ def load_data() -> pd.DataFrame:
     return pd.read_csv(DATA_PATH)
 
 
-def get_user_features(df: pd.DataFrame, user_id: int) -> pd.Series | None:
-    row = df[df["user_id"] == user_id]
+def get_user_features(df: pd.DataFrame, user_id: str) -> pd.Series | None:
+    row = df[df["user_id"].astype(str) == str(user_id)]
     if row.empty:
         return None
     return row[FEATURE_COLUMNS].iloc[0]

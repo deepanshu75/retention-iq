@@ -5,7 +5,7 @@ import numpy as np
 from fastapi import FastAPI, HTTPException
 
 from app.features import get_user_features, load_data
-from app.model import load_model, predict_proba_and_drivers, risk_level
+from core.model import load_model, predict_proba_and_drivers, risk_level
 
 _df = None
 
@@ -28,7 +28,7 @@ def health() -> dict:
 
 
 @app.get("/churn-score/{user_id}")
-def churn_score(user_id: int) -> dict:
+def churn_score(user_id: str) -> dict:
     if _df is None:
         raise HTTPException(status_code=503, detail="Data not loaded")
     features = get_user_features(_df, user_id)

@@ -4,7 +4,7 @@ from pathlib import Path
 import joblib
 import numpy as np
 
-MODEL_PATH = Path(__file__).resolve().parent / "model.joblib"
+MODEL_PATH = Path(__file__).resolve().parent.parent / "app" / "model.joblib"
 
 _artifact: dict | None = None
 

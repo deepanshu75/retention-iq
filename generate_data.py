@@ -3,6 +3,7 @@ Generate synthetic subscription dataset with churn logic.
 Writes data/subscription_data.csv.
 """
 import random
+import uuid
 from pathlib import Path
 
 import numpy as np
@@ -38,7 +39,7 @@ def main() -> None:
     churned = (1 / (1 + np.exp(-churn_logit)) > 0.5).astype(int)
 
     df = pd.DataFrame({
-        "user_id": np.arange(1, N_USERS + 1),
+        "user_id": [str(uuid.uuid4()) for _ in range(N_USERS)],
         "tenure_days": tenure_days,
         "sessions_last_30d": sessions_last_30d,
         "payment_failures": payment_failures,

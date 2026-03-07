@@ -105,3 +105,5 @@ Interactive docs: `http://localhost:8000/docs`.
 ## Development
 
 Changes are merged via pull requests; we use **squash and merge** to keep main history clean. Open a branch, push, then open a PR against `main`.
+
+For a deeper breakdown of the code architecture and data flow, you can check the [Retention-IQ DeepWiki page](https://deepwiki.com/deepanshu75/retention-iq).
